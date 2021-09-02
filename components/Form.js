@@ -46,7 +46,7 @@ const Invoiceform = () => {
         <>
 
         
-        <div className="border flex flex-row justify-between w-full max-w-4xl mt-24 rounded  mx-auto p-3 md:p-10 bg-white ">
+        <div className="border flex flex-col justify-center md:flex-row md:justify-between w-full max-w-4xl mt-24 rounded  mx-auto p-3 md:p-10 bg-white ">
                 <div>
                       {buttonstate &&<button onClick={buttonhandler} className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">View List</button>}
                       {!buttonstate && <button  onClick={buttonhandler} className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">Add to List</button>}
