@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@natscale/react-calendar": "^0.0.0-beta.8",
     "next": "11.1.2",
     "rc-calendar": "^9.15.11",
     "react": "17.0.2",
