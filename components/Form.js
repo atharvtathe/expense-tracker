@@ -78,7 +78,7 @@ const Invoiceform = () => {
                 })}
 
                 <div>
-                    <button onClick={addnewitem} className="bg-purple-400 text-white px-3 py-2 mt-10 rounded hover:bg-purple-500">+ New Item</button>
+                    <button onClick={addnewitem} className="bg-purple-400 text-white px-3 py-2 mt-10 rounded hover:bg-purple-500">+ add expense</button>
                 </div>
 
                 
