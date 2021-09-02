@@ -28,6 +28,14 @@ const Invoiceform = () => {
         setValue(value);
     }
 
+    const buttonhandler = () => {
+        if(buttonstate){
+            setbuttonstate(false)
+        }
+        else{
+            setbuttonstate(true)
+        }
+    }
 
 
 
@@ -40,8 +48,8 @@ const Invoiceform = () => {
         
         <div className="border flex flex-row justify-between w-full max-w-4xl mt-24 rounded  mx-auto p-3 md:p-10 bg-white ">
                 <div>
-                      {buttonstate &&<button  className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">View List</button>}
-                      {!buttonstate && <button  className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">Add to List</button>}
+                      {buttonstate &&<button onClick={buttonhandler} className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">View List</button>}
+                      {!buttonstate && <button  onClick={buttonhandler} className="bg-purple-400 text-white px-3 py-2  rounded hover:bg-purple-500">Add to List</button>}
 
                       <div className="mt-10 font-bold">Subtotal : {totalamount}</div>
                 </div>
@@ -54,7 +62,7 @@ const Invoiceform = () => {
                 
         </div>
 
-        <div className="flex flex-col xl:flex-row justify-center mt-5 xl:space-x-14">
+        {buttonstate &&<div className="flex flex-col xl:flex-row justify-center mt-5 xl:space-x-14">
 
             <div className="border w-full max-w-4xl mt-5 rounded  shadow-lg p-3 md:p-10 bg-white ">
 
@@ -87,7 +95,31 @@ const Invoiceform = () => {
 
 
 
-        </div>
+        </div>}
+
+        {!buttonstate && <div className="max-w-4xl p-5 mx-auto ">
+            <ul className="">
+                {products.map(product => {
+                    return <div key={product.id} className="flex flex-row border w-full rounded-md mt-1">
+                        <div className="w-1/4 p-2 border-r">
+                            {product.desc}
+                        </div>
+                    
+                        <div className="w-1/4 p-2 border-r">
+                            {product.time}
+                        </div>
+                        <div className="w-1/4 p-2 border-r">
+                            {product.date}
+                        </div>
+                        <div className="w-1/4 p-2">
+                            {product.price}
+                        </div>
+                    </div>
+                })}
+
+            </ul>
+            
+        </div>}
         </>
  
 
